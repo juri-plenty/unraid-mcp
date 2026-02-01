@@ -52,7 +52,7 @@ cp .env.example .env
 
 ### 3. Deploy with Docker (Recommended)
 ```bash
-# Start with Docker Compose
+# Start with Docker Compose (uses the published GHCR image)
 docker compose up -d
 
 # View logs
@@ -85,23 +85,22 @@ cd unraid-mcp
 export UNRAID_API_URL="http://your-unraid-server/graphql"
 export UNRAID_API_KEY="your_api_key_here"
 
-# Deploy with Docker Compose
+# Deploy with Docker Compose (uses the published GHCR image)
 docker compose up -d
 
 # View logs
 docker compose logs -f unraid-mcp
 ```
 
-#### Manual Docker Build
+#### Manual Docker Run (Published Image)
 ```bash
-# Build and run manually
-docker build -t unraid-mcp-server .
+# Run the published image manually
 docker run -d --name unraid-mcp \
   --restart unless-stopped \
   -p 6970:6970 \
   -e UNRAID_API_URL="http://your-unraid-server/graphql" \
   -e UNRAID_API_KEY="your_api_key_here" \
-  unraid-mcp-server
+  ghcr.io/jmagar/unraid-mcp:latest
 ```
 
 ### 🔧 Development Installation

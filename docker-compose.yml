@@ -1,8 +1,6 @@
 services:
   unraid-mcp:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: ghcr.io/jmagar/unraid-mcp:latest
     container_name: unraid-mcp
     restart: unless-stopped
     ports:
