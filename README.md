@@ -92,7 +92,7 @@ docker compose up -d
 docker compose logs -f unraid-mcp
 ```
 
-#### Manual Docker Run (Published Image)
+#### Docker Run
 ```bash
 # Run the published image manually
 docker run -d --name unraid-mcp \
