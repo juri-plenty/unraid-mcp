@@ -92,16 +92,15 @@ docker compose up -d
 docker compose logs -f unraid-mcp
 ```
 
-#### Manual Docker Build
+#### Docker Run
 ```bash
-# Build and run manually
-docker build -t unraid-mcp-server .
+# Run the published image manually
 docker run -d --name unraid-mcp \
   --restart unless-stopped \
   -p 6970:6970 \
   -e UNRAID_API_URL="http://your-unraid-server/graphql" \
   -e UNRAID_API_KEY="your_api_key_here" \
-  unraid-mcp-server
+  ghcr.io/jmagar/unraid-mcp:latest
 ```
 
 ### 🔧 Development Installation
